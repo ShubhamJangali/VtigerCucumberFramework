@@ -49,7 +49,6 @@ public class loginStepdifinitions extends BaseDefinitions {
 
 	@When("user enters valid credentials")
 	public void user_enters_valid_credentials() {
-
 		lp.Setusername(dt.get(TC_Name).get("Userid"));
 		lp.Setuserpassword(dt.get(TC_Name).get("Password"));
 	}
@@ -105,6 +104,15 @@ public class loginStepdifinitions extends BaseDefinitions {
 		lp.Setusername(dt.get(TC_Name).get("Userid"));
 		lp.Setuserpassword(dt.get(TC_Name).get("Password"));
 		lp.Settheme(dt.get(TC_Name).get("theme"));
+	}
+	
+	@Then("move mouse to showmenu")
+	public void move_mouse_to_showmenu() {
+		lp.ClickShowMenu();
+	}
+	@Then("click on New Vendor")
+	public void click_on_new_vendor() {
+	    lp.ClickNewVendor();
 	}
 
 }

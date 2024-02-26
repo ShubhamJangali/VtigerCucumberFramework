@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,7 +41,7 @@ public class CommonActions {
 		}
 	}
 	
-	public void SelectByText(WebElement ele, String str, String msg) {
+	public void SelectByVisibleText(WebElement ele, String str, String msg) {
 		try {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			Select select = new Select(ele);
@@ -78,6 +79,7 @@ public class CommonActions {
 	
 	public void AlertAccept(String msg) {
 		try {
+			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 			logger.pass("Alert generated and  "+msg);
 		} catch (Exception e) {
@@ -88,7 +90,19 @@ public class CommonActions {
 	
 	public void AlertDismiss(String msg) {
 		try {
+			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().dismiss();
+			logger.pass(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+		}
+	}
+	
+	public void AlertGetText(String msg) {
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			driver.switchTo().alert().getText();
 			logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,6 +114,30 @@ public class CommonActions {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(ele));
 			ele.click();
+			logger.pass(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+		}
+	}
+	
+	public void MoveToElement(WebElement ele,String msg) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(ele));
+			Actions act = new Actions(driver);
+			act.moveToElement(ele).perform();
+			logger.pass(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+		}
+	}
+	
+	public void ActionsClick(WebElement ele,String msg) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(ele));
+			Actions act = new Actions(driver);
+			act.click(ele).perform();
 			logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();

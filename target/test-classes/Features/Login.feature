@@ -11,7 +11,13 @@ Then user should be on home page
 And user can see logout option
 Then click on logout Button
 
-
+@TC_03
+Scenario: Valid_Login1_TC01
+Given user should be on login page
+When user enters valid credentials
+And click on login button
+Then user should be on home page
+And Click on NewLead
 
 
 Scenario: Valid_Login2_TC02
