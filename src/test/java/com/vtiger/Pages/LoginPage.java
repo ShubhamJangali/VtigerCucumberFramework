@@ -35,6 +35,12 @@ public class LoginPage extends CommonActions {
 
 	@FindBy(xpath = "//img[@src=\"include/images/vtiger-crm.gif\"]")
 	WebElement img_logo;
+	
+	@FindBy(xpath = "//a[@id=\"showSubMenu\"]")
+	WebElement lnk_showmenu;
+	
+	@FindBy(xpath = "//a[text()=\"New Vendor\"]")
+	WebElement lnk_New_vendor;
 
 	public void login(String username, String password) {
 		Setusername(username);
@@ -89,6 +95,14 @@ public class LoginPage extends CommonActions {
 	
 	public void verifyLoginButton() {
 		ElementExist(btn_login," Login Button is Dislpayed");
+	}
+	
+	public void ClickShowMenu() {
+		MoveToElement(lnk_showmenu," Mouse moved to showmenu");
+	}
+	
+	public void ClickNewVendor() {
+		ActionsClick(lnk_New_vendor," New Vendor Clicked");
 	}
 
 }

@@ -27,16 +27,21 @@
   "Password": "admin"
  },
  
- "ValidLogin_TC_02":
+ "Theme_Selection":
  {
  "Userid": "admin",
   "Password": "admin",
   "theme":"nature"
  },
- "New_Lead_TC_01":
+ "Alert":
  {
   "Userid": "admin",
   "Password": "admin",
   "lastname":"Jangali"
+ },
+  "Activity_01":
+ {
+  "Userid": "admin",
+  "Password": "admin"
  }
 }
