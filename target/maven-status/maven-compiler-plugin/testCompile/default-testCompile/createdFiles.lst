@@ -1,1 +1,10 @@
-com\testng\LogTest.class
+com\vtiger\runner\TestRunner.class
+com\vtiger\CommonActions\CommonActions.class
+com\vtiger\Pages\HomePage.class
+com\vtiger\Pages\NewLeadPage.class
+com\vtiger\stepdifinitions\NewLeadDefinition.class
+com\vtiger\stepdifinitions\loginStepdifinitions.class
+com\vtiger\Pages\LoginPage.class
+com\vtiger\Pages\NewContactPage.class
+com\vtiger\stepdifinitions\BaseDefinitions$1.class
+com\vtiger\stepdifinitions\BaseDefinitions.class

@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-02T09:16:23Z" name="Surefire suite" finished-at="2024-02-02T09:16:31Z" duration-ms="8104">
+  <suite started-at="2024-02-29T06:07:57Z" name="Surefire suite" finished-at="2024-02-29T06:08:43Z" duration-ms="46676">
     <groups>
     </groups>
-    <test started-at="2024-02-02T09:16:23Z" name="Surefire test" finished-at="2024-02-02T09:16:31Z" duration-ms="8104">
-      <class name="com.testng.LogTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.testng.LogTest@7bc1a03d]" started-at="2024-02-02T09:16:23Z" name="launch" finished-at="2024-02-02T09:16:31Z" duration-ms="8065" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method signature="login()[pri:0, instance:com.testng.LogTest@7bc1a03d]" started-at="2024-02-02T09:16:31Z" name="login" finished-at="2024-02-02T09:16:31Z" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- com.testng.LogTest -->
+    <test started-at="2024-02-29T06:07:57Z" name="Surefire test" finished-at="2024-02-29T06:08:43Z" duration-ms="46676">
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>
