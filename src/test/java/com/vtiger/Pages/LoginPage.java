@@ -106,3 +106,4 @@ public class LoginPage extends CommonActions {
 	}
 
 }
+

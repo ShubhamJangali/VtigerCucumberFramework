@@ -1,5 +1,10 @@
 package com.vtiger.CommonActions;
 
+
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -7,6 +12,7 @@ import java.time.Duration;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -155,6 +161,61 @@ public class CommonActions {
 			logger.fail("Element not exist due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
+	
+	public void DragandDrop(WebElement ele1,WebElement ele2,String msg) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(ele1));
+			wait.until(ExpectedConditions.visibilityOf(ele2));
+			Actions act = new Actions(driver);
+			act.dragAndDrop(ele1, ele2).perform();
+			Thread.sleep(5000);
+			logger.pass(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+		}
+	}
+	
+	public void uploadfile_sendkeys(WebElement ele,String path,String msg) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(ele));
+			ele.sendKeys(path);
+			Thread.sleep(5000);
+			logger.pass(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+		}
+	}
+	
+	public void uploadfile_Robot_Class(WebElement ele,String path,String msg) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(ele));
+			JavascriptExecutor js = ((JavascriptExecutor) driver);
+	        js.executeScript("window.scrollBy(0,500)","");
+	        Actions act = new Actions(driver);
+	        act.click(ele).perform();
+	        StringSelection stringSelection = new StringSelection(path);
+	        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+	        Thread.sleep(3000);
+	        Robot r = new Robot();
+	        r.keyPress(KeyEvent.VK_ENTER);
+	        r.keyRelease(KeyEvent.VK_ENTER);
+	        r.keyPress(KeyEvent.VK_CONTROL);
+	        r.keyPress(KeyEvent.VK_V);
+	        r.keyRelease(KeyEvent.VK_CONTROL);
+	        r.keyRelease(KeyEvent.VK_V);
+	        r.keyPress(KeyEvent.VK_ENTER);
+	        r.keyRelease(KeyEvent.VK_ENTER);
+	        Thread.sleep(5000);
+			System.out.println(path);
+			logger.pass(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+		}
+	}
+
 	
 	public String getscreenshot() {
 		Date date = new Date();

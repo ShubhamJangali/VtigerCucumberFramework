@@ -113,5 +113,5 @@ public class loginStepdifinitions extends BaseDefinitions {
 	public void click_on_new_vendor() {
 	    lp.ClickNewVendor();
 	}
-
+	
 }

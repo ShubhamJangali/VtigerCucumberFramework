@@ -26,4 +26,31 @@ Then user should be on home page
 And move mouse to showmenu
 Then click on New Vendor
 
+@TC_06
+Scenario: DragandDrop
+Given user should be on login page
+When user enters valid credentials
+And click on login button
+Then user should be on home page
+And click on My Account
+Then click on Customize Tab
+Then Drag and drop the Home to Contact
 
+
+@TC_07
+Scenario: FileUpload_using_sendkeys
+Given user should be on login page
+When user enters valid credentials
+And click on login button
+Then user should be on home page
+And Click on New Product
+Then upload file using sendkeys
+
+@TC_08
+Scenario: FileUpload_using_RobotClass
+Given user should be on login page
+When user enters valid credentials
+And click on login button
+Then user should be on home page
+And Click on New Product
+Then upload file using Robot Class

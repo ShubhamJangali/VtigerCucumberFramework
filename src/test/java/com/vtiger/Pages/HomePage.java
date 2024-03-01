@@ -25,6 +25,24 @@ public class HomePage extends CommonActions {
 	@FindBy(xpath="//a[text()=\"New Lead\"]")
 	WebElement lnk_NewLead;
 	
+	@FindBy(linkText = "My Account")
+	WebElement lnk_My_Account;
+	
+	@FindBy(name = "Customise")
+	WebElement inp_customize;
+	
+	@FindBy(xpath = "//td[@id=\"cl1\"]")
+	WebElement tab_Home;
+	
+	@FindBy(xpath = "//td[@id=\"cl6\"]")
+	WebElement tab_Contacts;
+	
+	@FindBy(partialLinkText = "New Product")
+	WebElement lnk_New_Product;
+	
+	@FindBy(name = "imagename")
+	WebElement inp_file;
+	
 	public boolean verifyLogout() {
 		return lnk_Logout.isDisplayed();
 	}
@@ -41,4 +59,27 @@ public class HomePage extends CommonActions {
 		lnk_NewLead.click();
 	}
 	
+	public void clickonMyAccount() {
+		ClickElement(lnk_My_Account, "Clicked on My Account");
+	}
+	
+	public void clickonCustomize() {
+		ClickElement(inp_customize, "Clicked on Customize");
+	}
+	
+	public void DragDrop() {
+		DragandDrop(tab_Home, tab_Contacts, "Drag and Drop is performed");
+	}
+	
+	public void clickonNewProduct() {
+		ClickElement(lnk_New_Product, "Clicked on New Product");
+	}
+	
+	public void uploadfile(String path) {
+		uploadfile_sendkeys(inp_file,path, "File uploaded");
+	}
+	
+	public void uploadfile_robot(String path) {
+		uploadfile_Robot_Class(inp_file, path,"File uploaded using robot class");
+	}
 }

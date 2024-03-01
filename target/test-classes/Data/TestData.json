@@ -43,5 +43,22 @@
  {
   "Userid": "admin",
   "Password": "admin"
+ },
+   "DragandDrop":
+ {
+  "Userid": "admin",
+  "Password": "admin"
+ },
+ "FileUpload_using_sendkeys":
+ {
+  "Userid": "admin",
+  "Password": "admin",
+  "FilePath":"C:/Users/HP/OneDrive/Desktop/git.txt"
+ },
+  "FileUpload_using_RobotClass":
+ {
+  "Userid": "admin",
+  "Password": "admin",
+  "FilePath":"\"C:\\Users\\HP\\OneDrive\\Desktop\\git.txt\""
  }
 }
