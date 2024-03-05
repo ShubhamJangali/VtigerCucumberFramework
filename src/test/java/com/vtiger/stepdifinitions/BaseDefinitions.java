@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -94,4 +95,5 @@ public class BaseDefinitions {
 		extent.setSystemInfo("UserName", "Shubham");
 		htmlrepoter.config().setTheme(Theme.STANDARD);
 	}
+	
 }

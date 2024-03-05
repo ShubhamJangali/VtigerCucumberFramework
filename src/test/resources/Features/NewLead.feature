@@ -54,3 +54,12 @@ And click on login button
 Then user should be on home page
 And Click on New Product
 Then upload file using Robot Class
+
+@TC_09
+Scenario: FileUpload_using_sendkeys
+Given user should be on login page
+When user enters valid credentials
+And click on login button
+Then user should be on home page
+And Click on New Product
+Then scroll the page

@@ -82,4 +82,8 @@ public class HomePage extends CommonActions {
 	public void uploadfile_robot(String path) {
 		uploadfile_Robot_Class(inp_file, path,"File uploaded using robot class");
 	}
+	
+	public void scroll() {
+		PageScroll();
+	}
 }

@@ -215,7 +215,17 @@ public class CommonActions {
 			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
-
+	
+	public void PageScroll(){
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,500)", "");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public String getscreenshot() {
 		Date date = new Date();
@@ -234,6 +244,5 @@ public class CommonActions {
 		
 		return path;
 	}
-	
-	
+
 }
