@@ -19,7 +19,7 @@ And click on login button
 Then user should be on home page
 And Click on NewLead
 
-
+@TC_Test
 Scenario: Valid_Login2_TC02
 When user enters valid credentials
 And click on login button

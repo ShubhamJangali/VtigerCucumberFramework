@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 		//dryRun = true,
 		plugin = {"pretty","html:target/cucumber-html-report.html","json:target/cucumber.json"},
 		monochrome = false
-		,tags = "@Assignment"
+		,tags = "@TC_Test"
 		
 		)
 public class TestRunner {

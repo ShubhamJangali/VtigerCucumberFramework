@@ -26,7 +26,11 @@
  "Userid": "admin",
   "Password": "admin"
  },
- 
+ "Valid_Login2_TC02":
+ {
+ "Userid": "admin",
+  "Password": "admin"
+ },
  "Theme_Selection":
  {
  "Userid": "admin",

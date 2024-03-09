@@ -43,20 +43,20 @@ public class HomePage extends CommonActions {
 	@FindBy(name = "imagename")
 	WebElement inp_file;
 	
-	public boolean verifyLogout() {
-		return lnk_Logout.isDisplayed();
+	public void verifyLogout() {
+		ElementExist(lnk_Logout, "Logout Verified");
 	}
 	
 	public void clickLogout() {
-		lnk_Logout.click();
+		ClickElement(lnk_Logout, "Clicked on Logout");
 	}
 	
 	public void clickOnCreateNewContact() {
-		lnk_NewContact.click();
+		ClickElement(lnk_NewContact, "Clicked on New Contact");
 	}
 	
 	public void clickonNewLead() {
-		lnk_NewLead.click();
+		ClickElement(lnk_NewLead, "Clicked on New Lead");
 	}
 	
 	public void clickonMyAccount() {
