@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.aventstack.extentreports.ExtentTest;
 import com.vtiger.CommonActions.CommonActions;
 
-import net.bytebuddy.implementation.bind.annotation.Super;
-
 public class LoginPage extends CommonActions {
 
 	
