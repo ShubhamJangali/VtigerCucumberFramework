@@ -43,6 +43,9 @@ public class HomePage extends CommonActions {
 	@FindBy(name = "imagename")
 	WebElement inp_file;
 	
+	@FindBy(xpath = "(//a[contains(text(),\"Reports\")])[1]")
+	WebElement lnk_Reports;
+	
 	public void verifyLogout() {
 		ElementExist(lnk_Logout, "Logout Verified");
 	}
@@ -85,5 +88,9 @@ public class HomePage extends CommonActions {
 	
 	public void scroll() {
 		PageScroll();
+	}
+	
+	public void clickonReports() {
+		ClickElement(lnk_Reports, "Clicked on Reports");
 	}
 }

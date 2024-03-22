@@ -32,8 +32,9 @@ public class loginStepdifinitions extends BaseDefinitions {
 	}
 	
 	@After
-	public void TearDown() {
+	public void TearDown() throws InterruptedException {
 		extent.flush();
+		Thread.sleep(3000);
 		driver.quit();
 	}
 	

@@ -64,5 +64,10 @@
   "Userid": "admin",
   "Password": "admin",
   "FilePath":"\"C:\\Users\\HP\\OneDrive\\Desktop\\git.txt\""
- }
+ },
+ "trial":
+ {
+  "Userid": "admin",
+  "Password": "admin"
+  }
 }

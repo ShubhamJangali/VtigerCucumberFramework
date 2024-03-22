@@ -45,6 +45,7 @@ public class BaseDefinitions {
 	public static void launchApp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		driver.get(prop.getProperty("AppURL"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(prop.getProperty("ImplicitWait"))));
 	}

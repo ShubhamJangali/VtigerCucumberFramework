@@ -3,6 +3,7 @@ package com.vtiger.stepdifinitions;
 import com.vtiger.Pages.HomePage;
 import com.vtiger.Pages.LoginPage;
 import com.vtiger.Pages.NewLeadPage;
+import com.vtiger.Pages.ReportsPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,6 +14,7 @@ public class NewLeadDefinition extends BaseDefinitions{
 	LoginPage lp;
 	HomePage hp;
 	NewLeadPage NLP;
+	ReportsPage RP;
 	
 	@Given("user should be on New Lead page")
 	public void user_should_be_on_new_lead_page() {
@@ -44,6 +46,5 @@ public class NewLeadDefinition extends BaseDefinitions{
 		hp = new HomePage(driver, Logger);
 	    hp.clickonNewLead();
 	}
-
-
+	
 }
