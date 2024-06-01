@@ -19,7 +19,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.vtiger.Pages.PageObjectManager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -31,6 +31,7 @@ public class BaseDefinitions {
 	public static Map<String,Map<String,String>> dt;
 	public static ExtentTest Logger;
 	public static String TC_Name;
+	public static PageObjectManager pageobjectmanager;
 	
 	
 	public void initiation() {
@@ -48,6 +49,7 @@ public class BaseDefinitions {
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("AppURL"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(prop.getProperty("ImplicitWait"))));
+		pageobjectmanager = new PageObjectManager(driver);
 	}
 	
 	public void CloseApp() {

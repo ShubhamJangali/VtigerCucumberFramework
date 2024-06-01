@@ -20,9 +20,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class loginStepdifinitions extends BaseDefinitions {
 
-	LoginPage lp;
-	HomePage hp;
-
 	@Before
 	public void getScenarioName(Scenario scenario) {
 		initiation();
@@ -41,42 +38,39 @@ public class loginStepdifinitions extends BaseDefinitions {
 	
 	@Given("user should be on login page")
 	public void user_should_be_on_login_page() {
-		
-		lp = new LoginPage(driver,Logger);
-		hp = new HomePage(driver,Logger);
-		lp.verifyLoginButton();
+		pageobjectmanager.getloginpage().verifyLoginButton();
 	}
 
 	@When("user enters valid credentials")
 	public void user_enters_valid_credentials() {
-		lp.Setusername(dt.get(TC_Name).get("Userid"));
-		lp.Setuserpassword(dt.get(TC_Name).get("Password"));
+		pageobjectmanager.getloginpage().Setusername(dt.get(TC_Name).get("Userid"));
+		pageobjectmanager.getloginpage().Setuserpassword(dt.get(TC_Name).get("Password"));
 	}
 
 	@When("click on login button")
 	public void click_on_login_button() {
-		lp.ClickLogin();
+		pageobjectmanager.getloginpage().ClickLogin();
 	}
 
 	@Then("user should be on home page")
 	public void user_should_be_on_home_page() {
-		hp.verifyLogout();
+		pageobjectmanager.gethomepage().verifyLogout();
 	}
 
 	@Then("user can see logout option")
 	public void user_can_see_logout_option() {
-		hp.verifyLogout();
+		pageobjectmanager.gethomepage().verifyLogout();
 	}
 
 	@Then("click on logout Button")
 	public void click_on_logout_button() {
-		hp.clickLogout();
+		pageobjectmanager.gethomepage().clickLogout();
 	}
 
 	@When("user enters valid credentials userid as {string} and password as {string}")
 	public void user_enters_valid_credentials_userid_as_and_password_as(String name, String password) {
-		lp.Setusername(name);
-		lp.Setuserpassword(password);
+		pageobjectmanager.getloginpage().Setusername(name);
+		pageobjectmanager.getloginpage().Setuserpassword(password);
 	}
 
 	@When("user enters valid credentials userid {string} and password {string}")
@@ -94,25 +88,25 @@ public class loginStepdifinitions extends BaseDefinitions {
 			driver.findElement(By.name("user_name")).sendKeys(m.get("user_id"));
 			driver.findElement(By.name("user_password")).sendKeys(m.get("password"));
 
-			lp.Setusername(m.get("user_id"));
-			lp.Setuserpassword(m.get("password"));
+			pageobjectmanager.getloginpage().Setusername(m.get("user_id"));
+			pageobjectmanager.getloginpage().Setuserpassword(m.get("password"));
 		}
 	}
 	
 	@When("user enters valid credentials and theme")
 	public void user_enters_valid_credentials_and_theme() {
-		lp.Setusername(dt.get(TC_Name).get("Userid"));
-		lp.Setuserpassword(dt.get(TC_Name).get("Password"));
-		lp.Settheme(dt.get(TC_Name).get("theme"));
+		pageobjectmanager.getloginpage().Setusername(dt.get(TC_Name).get("Userid"));
+		pageobjectmanager.getloginpage().Setuserpassword(dt.get(TC_Name).get("Password"));
+		pageobjectmanager.getloginpage().Settheme(dt.get(TC_Name).get("theme"));
 	}
 	
 	@Then("move mouse to showmenu")
 	public void move_mouse_to_showmenu() {
-		lp.ClickShowMenu();
+		pageobjectmanager.getloginpage().ClickShowMenu();
 	}
 	@Then("click on New Vendor")
 	public void click_on_new_vendor() {
-	    lp.ClickNewVendor();
+		pageobjectmanager.getloginpage().ClickNewVendor();
 	}
 	
 }

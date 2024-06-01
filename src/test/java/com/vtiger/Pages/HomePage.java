@@ -11,8 +11,8 @@ import com.vtiger.CommonActions.CommonActions;
 public class HomePage extends CommonActions {
 
 	
-	public HomePage(WebDriver driver,ExtentTest Logger) {
-		super(driver,Logger);
+	public HomePage(WebDriver driver) {
+		super(driver);
 		PageFactory.initElements(driver,this);
 	}
 	

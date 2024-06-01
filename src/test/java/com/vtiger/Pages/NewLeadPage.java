@@ -10,8 +10,8 @@ import com.vtiger.CommonActions.CommonActions;
 
 public class NewLeadPage extends CommonActions{
 
-	public NewLeadPage(WebDriver driver, ExtentTest logger) {
-		super(driver, logger);
+	public NewLeadPage(WebDriver driver) {
+		super(driver);
 		PageFactory.initElements(driver,this);
 	}
 	

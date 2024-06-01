@@ -11,40 +11,34 @@ import io.cucumber.java.en.When;
 
 public class NewLeadDefinition extends BaseDefinitions{
 	
-	LoginPage lp;
-	HomePage hp;
-	NewLeadPage NLP;
-	ReportsPage RP;
-	
 	@Given("user should be on New Lead page")
 	public void user_should_be_on_new_lead_page() {
 		
-		lp = new LoginPage(driver,Logger);
-		hp = new HomePage(driver, Logger);
-		lp.Setusername(dt.get(TC_Name).get("Userid"));
-		lp.Setuserpassword(dt.get(TC_Name).get("Password"));
-		lp.ClickLogin();
-		hp.clickonNewLead();
+	
+		pageobjectmanager.getloginpage().Setusername(dt.get(TC_Name).get("Userid"));
+		pageobjectmanager.getloginpage().Setuserpassword(dt.get(TC_Name).get("Password"));
+		pageobjectmanager.getloginpage().ClickLogin();
+		pageobjectmanager.gethomepage().clickonNewLead();
 	}
 	@When("user enter last name")
 	public void user_enter_last_name() {
-	    NLP = new NewLeadPage(driver, Logger);
-	    NLP.Setlastname(dt.get(TC_Name).get("lastname"));
+	   
+		pageobjectmanager.getnewleadpage().Setlastname(dt.get(TC_Name).get("lastname"));
 	}
 	@When("click on save button")
 	public void click_on_save_button() {
-	   NLP.clickonsave();
+		pageobjectmanager.getnewleadpage().clickonsave();
 	}
 	
 	@Then("click ok in alert")
 	public void click_ok_in_alert() {
-	    NLP.AcceptAlert();
+		pageobjectmanager.getnewleadpage().AcceptAlert();
 	}
 	
 	@Then("Click on NewLead")
 	public void click_on_new_lead() {
-		hp = new HomePage(driver, Logger);
-	    hp.clickonNewLead();
+	
+		pageobjectmanager.gethomepage().clickonNewLead();
 	}
 	
 }

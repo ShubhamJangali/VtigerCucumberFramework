@@ -10,8 +10,8 @@ import com.vtiger.CommonActions.CommonActions;
 
 public class ReportsPage extends CommonActions{
 
-	public ReportsPage(WebDriver driver, ExtentTest logger) {
-		super(driver, logger);
+	public ReportsPage(WebDriver driver) {
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	

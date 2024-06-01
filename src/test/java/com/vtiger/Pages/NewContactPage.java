@@ -10,8 +10,8 @@ import com.vtiger.CommonActions.CommonActions;
 
 public class NewContactPage extends CommonActions{
 
-	public NewContactPage(WebDriver driver,ExtentTest logger) {
-		super(driver, logger);
+	public NewContactPage(WebDriver driver) {
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 

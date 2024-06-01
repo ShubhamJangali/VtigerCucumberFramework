@@ -22,16 +22,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.ExtentTest;
+import com.vtiger.stepdifinitions.BaseDefinitions;
 
 
 public class CommonActions {
 	WebDriver driver;
 	WebDriverWait wait;
-	public static ExtentTest logger;
-
-	public CommonActions(WebDriver driver, ExtentTest logger) {
+	
+	public CommonActions(WebDriver driver) {
 		this.driver = driver;
-		this.logger = logger;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
@@ -40,10 +39,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			ele.clear();
 			ele.sendKeys(str);
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -52,10 +51,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			Select select = new Select(ele);
 			select.selectByVisibleText(str);
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -64,10 +63,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			Select select = new Select(ele);
 			select.selectByIndex(Integer.parseInt(str));
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -76,10 +75,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			Select select = new Select(ele);
 			select.selectByValue(str);
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -87,10 +86,10 @@ public class CommonActions {
 		try {
 			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
-			logger.pass("Alert generated and  "+msg);
+			BaseDefinitions.Logger.pass("Alert generated and  "+msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -98,10 +97,10 @@ public class CommonActions {
 		try {
 			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().dismiss();
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -109,10 +108,10 @@ public class CommonActions {
 		try {
 			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().getText();
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Step failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 
@@ -120,10 +119,10 @@ public class CommonActions {
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(ele));
 			ele.click();
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -132,10 +131,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			Actions act = new Actions(driver);
 			act.moveToElement(ele).perform();
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -144,10 +143,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			Actions act = new Actions(driver);
 			act.click(ele).perform();
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Unable to click on Element due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 
@@ -155,10 +154,10 @@ public class CommonActions {
 		try {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			ele.isDisplayed();
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Element not exist due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Element not exist due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -169,10 +168,10 @@ public class CommonActions {
 			Actions act = new Actions(driver);
 			act.dragAndDrop(ele1, ele2).perform();
 			Thread.sleep(5000);
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -181,10 +180,10 @@ public class CommonActions {
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			ele.sendKeys(path);
 			Thread.sleep(5000);
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
@@ -209,10 +208,10 @@ public class CommonActions {
 	        r.keyRelease(KeyEvent.VK_ENTER);
 	        Thread.sleep(5000);
 			System.out.println(path);
-			logger.pass(msg);
+			BaseDefinitions.Logger.pass(msg);
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
+			BaseDefinitions.Logger.fail("Drag and Drop failed due to error "+e.getMessage()+"  <a href='"+getscreenshot()+"'><span class='label end-time'>Screnshot</span>");
 		}
 	}
 	
